@@ -1,0 +1,19 @@
+
+/* SMALL TO MEDIUM MOBILES */
+@media only screen and (max-width: 992px) {
+    section > .wrapper > form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-wrapper {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+/* LARGE DEVICES */
+@media only screen and (min-width: 992px) {
+    section > .wrapper > form {
+        grid-template-columns: 1fr 0fr 1fr;
+    }
+}

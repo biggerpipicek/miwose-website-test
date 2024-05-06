@@ -1,0 +1,37 @@
+
+/* SMALL MOBILES */
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid > .card {
+        margin-top: 25px;
+    }
+
+    footer {
+        top: 25vh;
+    }
+}
+
+/* SMALL TO MEDIUM DEVICES */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid > .card {
+        margin-top: 25px;
+    }
+}
+
+/* LARGE DEVICES */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid > .card {
+        margin-top: 25px;
+    }
+}

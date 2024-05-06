@@ -1,0 +1,232 @@
+/* SIGNIKA FONT */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lunasima:wght@400;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika:wght@300..700&display=swap');
+
+/* B612 FONT */
+@import url('https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lunasima:wght@400;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika:wght@300..700&display=swap');
+
+/* DM SANS FONT */
+@import url('https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lunasima:wght@400;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika:wght@300..700&display=swap');
+
+* {
+    font-family: 'Signika', sans-serif;
+    font-weight: 100;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+   z-index: 1;
+   background-color: rgba(0, 0, 0, 0.5);
+   backdrop-filter: blur(5px);
+}
+
+.navbar-brand {
+    font-size: 35px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 0;
+    font-weight: 400;
+}
+
+.hero {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-image: url("../imgs/hero.webp");
+    background-size: 100vh cover;
+}
+
+.hero > h1 {
+    text-shadow: 0px 0px 10px black;
+    color: white;
+    font-weight: 700;
+    font-size: 150px;
+    line-height: 0.75;
+    padding-left: 50px;
+}
+
+.hero > h1:nth-child(1) {
+    padding-top: 150px;
+}
+
+.hero > h1:nth-child(2) {
+    padding-left: 100px;
+}
+
+.hero > h1:nth-child(3) {
+    padding-left: 150px;
+}
+
+.hero > .description {
+    color: white;
+    font-size: large;
+    text-shadow: 0px 0px 5px black;
+    line-height: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+}
+
+.section-delitko {
+    width: 50%;
+    left: 25%;
+    position: relative;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #4d4d4d;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.warningabout + .section-delitko {
+    top: 110vh;
+}
+
+.payment + .section-delitko {
+    top: 120vh;
+}
+
+.warningabout {
+    text-align: center;
+    position: relative;
+    top: 105vh;
+}
+
+.payment {
+    text-align: center;
+    position: relative;
+    top: 115vh;
+}
+
+.policies {
+    text-align: center;
+    position: relative;
+    top: 125vh;
+}
+
+.policies > .faq {
+    position: relative;
+    top: 5vh;
+    left: 12.5%;
+    text-align: left;
+    width: 75%;
+}
+
+.faq p {
+    padding-top: 25px;
+    padding-left: 25px;
+}
+
+.faq p > a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.faq p > a::after {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: black;
+    transition: 300ms;
+}
+
+.faq p > a:hover::after {
+    width: 100%;
+}
+u {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+footer {
+    z-index: 1;
+    background-color: #1B1B1B;
+    top: 150vh;
+    position: relative;
+    color: white;
+}
+
+footer #name {
+    font-size: 0.7rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    padding-bottom: 0.5rem;
+}
+
+footer a:hover {
+    color: #666666;
+}
+
+footer h2 {
+    padding-top: 25px;
+    margin-bottom: 0;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 90%;
+}
+
+.first, .second, .third {
+    display: grid;
+}
+
+.fourth a {
+    padding-left: 0px !important;
+}
+
+.fourth a:nth-child(2), .fourth a:nth-child(3), .fourth a:nth-child(4), .fourth a:nth-child(5) {
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.links a {
+    padding-left: 100px;
+    text-align: left;
+}
+
+.footer-delitko {
+    width: 90%;
+    left: 5%;
+    position: relative;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #FFE7D0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+footer #copy {
+    padding-bottom: 15px;
+}
+
+footer #copy > a {
+    color: white;
+    display: inline-block;
+}
+
+footer #copy > a::after {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: white;
+    transition: 300ms;
+}
+
+footer #copy > a:hover::after {
+    width: 100%;
+}

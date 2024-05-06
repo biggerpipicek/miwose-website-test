@@ -1,0 +1,35 @@
+section {
+    position: relative;
+    top: 25vh;
+}
+
+section img#pulse {
+    width: 15vh;
+    height: 15vh;
+    animation: animationPulse 0.75s ease-in-out infinite;
+}
+
+section p:nth-child(4) {
+    padding-top: 25px;
+}
+
+footer {
+    top: 50vh;
+}
+
+@keyframes animationPulse {
+    0%, 100% {transform: scale(1.0)};
+    25% {transform: scale(0.9);}
+    75% {transform: scale(1.1);}
+}
+
+section img#rotate {
+    width: 15vh;
+    height: 15vh;
+    animation: animationRotate 1s ease-in-out infinite;
+}
+
+@keyframes animationRotate {
+    0%, 100% {transform: rotate(-25deg);}
+    50% {transform: rotate(25deg);}
+}

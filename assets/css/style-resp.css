@@ -1,0 +1,104 @@
+
+/* SMALL MOBILES */
+@media only screen and (max-width: 600px) {
+    .navbar-nav {
+        text-align: center;
+    } 
+
+    .hero {
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero > h1 {
+        font-size: 75px;
+    }
+
+    .hero h1:nth-child(1) {
+        padding-left: 0;
+    }
+    .hero h1:nth-child(2) {
+        padding-left: 0;
+    }
+    .hero h1:nth-child(3) {
+        padding-left: 0;
+    }
+
+    .hero .description {
+        line-height: normal;
+    }
+    .hero .description p:nth-child(1) {
+        margin-bottom: 0;
+    }
+
+    .policies .faq {
+        width: 90%;
+        left: 5%;
+    }
+
+    .faq p {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    footer > .links {
+        position: relative;
+        left: 5%;
+        grid-template-columns: auto auto;
+    }
+
+    .links a {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .links > .third, .fourth {
+        margin-top: 25px;
+    }
+}
+
+/* SMALL DEVICES */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .hero {
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero > h1 {
+        font-size: 95px;
+    }
+
+    .hero h1:nth-child(1) {
+        padding-left: 0;
+    }
+    .hero h1:nth-child(2) {
+        padding-left: 0;
+    }
+    .hero h1:nth-child(3) {
+        padding-left: 0;
+    }
+
+    .hero .description {
+        line-height: normal;
+    }
+    .hero .description p:nth-child(1) {
+        margin-bottom: 0;
+    }
+
+    footer > .links {
+        position: relative;
+        left: 5%;
+        grid-template-columns: auto auto;
+    }
+
+    .links a {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .links > .third, .fourth {
+        margin-top: 25px;
+    }
+}

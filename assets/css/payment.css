@@ -1,0 +1,102 @@
+section.background {
+    top: 0vh;
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.background > h1 {
+    color: black;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+section {
+    top: 0 !important;
+}
+
+section > .wrapper > form {
+    display: grid;
+    grid-template-columns: 1fr 0fr 1fr;
+    width: 90%;
+    left: 5%;
+    position: relative;
+}
+
+.main-form {
+    grid-column: 1 / span 3;
+}
+
+.method-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-group-item > .form-check {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 0.15fr 0.7fr 0.15fr;
+    width: 250px;
+}
+
+.form-check:nth-child(1) {
+    text-align: left;
+}
+
+.form-check i {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card-wrapper, .recap-wrapper {
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+.form-wrapper {
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.form-wrapper > div {
+    width: 90%;
+}
+
+.form-wrapper input {
+    position: relative;
+    left: 5%;
+    width: 90%;
+}
+
+.form-wrapper label:nth-child(1) {
+    margin-top: 25px;
+}
+
+.form-wrapper input:last-of-type {
+    margin-bottom: 25px;
+}
+
+.final-price-wrapper h2:nth-child(1) {
+    margin-top: 25px;
+}
+
+.final-price-wrapper h2:nth-child(2) {
+    font-weight: 100;
+}
+
+.final-price-wrapper h2:nth-child(2) > span {
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
