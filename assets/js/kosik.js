@@ -32,8 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = this.closest('.card');
             const productId = card.dataset.productId;
             const productName = card.querySelector('.product-name').textContent;
-            const priceInput = card.querySelector('.form-control'); // Select the input field
-            const productPrice = parseFloat(priceInput.value) || 0; // Retrieve the input field value
+            let productPrice = 0;
+
+            const priceInput = card.querySelector('.form-control');
+            if (priceInput) {
+                productPrice = parseFloat(priceInput.value) || 0;
+            } else {
+                const productPriceElement = card.querySelector('.product-price');
+                productPrice = parseFloat(productPriceElement.textContent) || 0;
+            }
+
             const productImage = card.querySelector('.product-image').src;
 
             addProductToCart({ productId, productName, productPrice, productImage, quantity: 1 });
