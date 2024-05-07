@@ -25,24 +25,24 @@ if (checkbox) {
 
 //SHOPPING CART SYSTEM
 
-document.addEventListener('DOMContentLoaded', () => {
-    const addToCartButtons = document.querySelectorAll('.addToCart');
+document.addEventListener("DOMContentLoaded", () => {
+    const addToCartButtons = document.querySelectorAll(".addToCart");
     addToCartButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.card');
+        button.addEventListener("click", function() {
+            const card = this.closest(".card");
             const productId = card.dataset.productId;
-            const productName = card.querySelector('.product-name').textContent;
+            const productName = card.querySelector(".product-name").textContent;
             let productPrice = 0;
 
-            const priceInput = card.querySelector('.form-control');
+            const priceInput = card.querySelector(".form-control");
             if (priceInput) {
                 productPrice = parseFloat(priceInput.value) || 0;
             } else {
-                const productPriceElement = card.querySelector('.product-price');
+                const productPriceElement = card.querySelector(".product-price");
                 productPrice = parseFloat(productPriceElement.textContent) || 0;
             }
 
-            const productImage = card.querySelector('.product-image').src;
+            const productImage = card.querySelector(".product-image").src;
 
             addProductToCart({ productId, productName, productPrice, productImage, quantity: 1 });
 
@@ -51,14 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addProductToCart(product) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let found = cart.find(p => p.productId === product.productId);
     if (found) {
         found.quantity += 1;
     } else {
         cart.push(product);
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
 
     showNotification();
     displayCart();
@@ -89,9 +89,9 @@ function showNotification() {
 }
 
 function displayCart() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const productsWrapper = document.querySelector('.products-wrapper');
-    productsWrapper.innerHTML = '';
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const productsWrapper = document.querySelector(".products-wrapper");
+    productsWrapper.innerHTML = "";
 
     cart.forEach(product => {
         const productHTML = `<div class="card-wrapper productCard">
@@ -123,27 +123,27 @@ function decrease(productId) {
 }
 
 function updateProductQuantity(productId, change) {
-    let cart = JSON.parse(localStorage.getItem('cart'));
+    let cart = JSON.parse(localStorage.getItem("cart"));
     let product = cart.find(p => p.productId === productId);
     if (product) {
         product.quantity += change;
         if (product.quantity <= 0) {
             cart = cart.filter(p => p.productId !== productId);
         }
-        localStorage.setItem('cart', JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart));
         displayCart();
     }
 }
 
 function getTotalPrice() {
     let totalPrice = 0;
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.forEach(product => {
         totalPrice += product.productPrice * product.quantity;
     });
     const totalPriceConsole = `Total Price: ${totalPrice}`;
     console.log(totalPriceConsole);
-    document.querySelector('.finalPrice').textContent = `${totalPrice}`;
+    document.querySelector(".finalPrice").textContent = `${totalPrice}`;
 }
 
 getTotalPrice();
