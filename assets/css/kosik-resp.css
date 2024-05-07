@@ -73,11 +73,6 @@
         margin-left: -25px;
     }
 
-    .price {
-        width: 200px;
-        left: 305px;
-    }
-
     .input-group {
         width: 250px;
     }
@@ -96,7 +91,9 @@
 
     .price {
         width: fit-content;
-        left: 65%;
+        left: 50%;
+        position: relative;
+        top: 60vh;
     }
 
     footer {
