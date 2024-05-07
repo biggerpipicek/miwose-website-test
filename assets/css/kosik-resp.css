@@ -2,7 +2,7 @@
 /* SMALL MOBILES */
 @media only screen and (max-width: 600px) {
     .desc {
-        width: 60%;
+        width: 75%;
         grid-template-columns: 0.3fr 0.4fr 0.3fr;
     }
 
@@ -11,7 +11,7 @@
     }
 
     .desc h3 {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .card-wrapper {
