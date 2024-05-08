@@ -176,7 +176,7 @@ function coupon_notification(txt, addclass) {
 let COUPON_APPLIED = false;
 
 function applyCoupon() {
-    if (couponApplied) {
+    if (COUPON_APPLIED) {
         var alreadyApplied = "Kupon již byl aplikován!";
         var addclass = "alert-info";
         console.log("Coupon already applied!");
@@ -208,7 +208,7 @@ function applyCoupon() {
         totalPrice -= discountAmount;
 
         document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
-        couponApplied = true;
+        COUPON_APPLIED = true;
     }
 }
 
