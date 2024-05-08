@@ -216,7 +216,8 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
 });
 
 function displayTotalPrice(totalPrice) {
-    document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
+    const formattedTotalPrice = totalPrice ? totalPrice.toFixed(2) : "0.00";
+    document.querySelector(".finalPrice").textContent = formattedTotalPrice;
 }
 
 window.onload = function() {
