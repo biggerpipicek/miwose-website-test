@@ -153,14 +153,15 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
     
     if (coupon.value === "") {
         console.log("Pole je prázdné!");
-        document.getElementById("couponLoad").setAttribute("data-bs-container", "body");
-        document.getElementById("couponLoad").setAttribute("data-bs-toggle", "popover");
-        document.getElementById("couponLoad").setAttribute("data-bs-placement", "bottom");
-        document.getElementById("couponLoad").setAttribute("data-bs-content", "Pole je prázdné!");
+        coupon.setAttribute("data-bs-container", "body");
+        coupon.setAttribute("data-bs-toggle", "popover");
+        coupon.setAttribute("data-bs-placement", "right");
+        coupon.setAttribute("data-bs-trigger", "focus");
+        coupon.setAttribute("data-bs-content", "Pole je prázdné!");
         
         event.preventDefault();
 
-        var popover = new bootstrap.Popover(document.getElementById("couponLoad"));
+        var popover = new bootstrap.Popover(coupon);
         popover.show();
     } else {
         // PASS
