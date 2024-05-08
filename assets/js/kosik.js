@@ -166,7 +166,17 @@ function coupon_notification(txt, addclass) {
     
 }
 
+let COUPON_APPLIED = false;
+
 function applyCoupon() {
+    if (couponApplied) {
+        var alreadyApplied = "Kupon již byl aplikován!";
+        var addclass = "alert-info";
+        console.log("Coupon already applied!");
+        coupon_notification(alreadyApplied, addclass);
+        return;
+    }
+
     const coupon_code = document.getElementById("coupon").value;
     const coupons = [
         { name: "COUPON_TEST", percentage: 5 },
@@ -191,6 +201,7 @@ function applyCoupon() {
         totalPrice -= discountAmount;
 
         document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
+        couponApplied = true;
     }
 }
 
