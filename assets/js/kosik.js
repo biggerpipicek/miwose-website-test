@@ -139,12 +139,14 @@ function getTotalPrice() {
 
 function increase(productId) {
     updateProductQuantity(productId, 1);
-    getTotalPrice();
+    const totalPrice = getTotalPrice();
+    displayTotalPrice(totalPrice);
 }
 
 function decrease(productId) {
     updateProductQuantity(productId, -1);
-    getTotalPrice();
+    const totalPrice = getTotalPrice();
+    displayTotalPrice(totalPrice);
 }
 
 function coupon_notification(txt, addclass) {
@@ -282,6 +284,4 @@ document.getElementById("paymentButton").addEventListener("click", function(even
 
         payment_notification();
     }
-})
-
-getTotalPrice();
+});
