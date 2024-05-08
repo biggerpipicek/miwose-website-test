@@ -135,6 +135,8 @@ function getTotalPrice() {
     cart.forEach(product => {
         totalPrice += product.productPrice * product.quantity;
     });
+
+    return totalPrice;
 }
 
 function increase(productId) {
