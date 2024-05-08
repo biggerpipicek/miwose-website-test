@@ -189,7 +189,7 @@ function coupon_notification(txt, addclass) {
     const notifContainer = document.getElementById("notification-container");
     notifContainer.appendChild(notification);
 
-    const notifications = notifContainer.querySelectorAll(".alert.alert-success");
+    const notifications = notifContainer.querySelectorAll(".alert");
     if (notifications.length > 1) {
         notifContainer.removeChild(notifications[0]);
     }
@@ -227,3 +227,35 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
         document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
     }
 });
+
+function payment_notification() {
+
+    const notification = document.createElement("div");
+    notification.className = `alert d-flex align-items-center fixed-bottom alert-danger`;
+    notification.id = "coupon_load";
+    notification.setAttribute("role", "alert");
+    notification.innerHTML = `<div>Máte prázdný košík!<br>Zkuste něco přidat a pokračovat poté!</div>`;
+
+    const notifContainer = document.getElementById("notification-container");
+    notifContainer.appendChild(notification);
+
+    const notifications = notifContainer.querySelectorAll(".alert");
+    if (notifications.length > 1) {
+        notifContainer.removeChild(notifications[0]);
+    }
+
+    setTimeout(()=>{
+        notification.remove();
+    },5000);
+    
+}
+
+document.getElementById("paymentButton").addEventListener("click", function(event) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if(cart.length === 0) {
+        event.preventDefault();
+
+        payment_notification();
+    }
+})
