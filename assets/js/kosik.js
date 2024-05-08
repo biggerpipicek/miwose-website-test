@@ -159,6 +159,9 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
         document.getElementById("couponLoad").setAttribute("data-bs-content", "Pole je prázdné!");
         
         event.preventDefault();
+
+        var popover = new bootstrap.Popover(document.getElementById("couponLoad"));
+        popover.show();
     } else {
         // PASS
     }
