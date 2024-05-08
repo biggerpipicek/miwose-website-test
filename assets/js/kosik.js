@@ -55,6 +55,10 @@ function addProductToCart(product) {
     let found = cart.find(p => p.productId === product.productId);
     if (found) {
         found.quantity += 1;
+
+        if(found.productId === "mesicni_odmena") {
+            found.quantity = 1;
+        }
     } else {
         cart.push(product);
     }
@@ -112,16 +116,6 @@ function displayCart() {
 
 window.onload = displayCart();
 
-function increase(productId) {
-    updateProductQuantity(productId, 1);
-    getTotalPrice();
-}
-
-function decrease(productId) {
-    updateProductQuantity(productId, -1);
-    getTotalPrice();
-}
-
 function updateProductQuantity(productId, change) {
     let cart = JSON.parse(localStorage.getItem("cart"));
     let product = cart.find(p => p.productId === productId);
@@ -142,6 +136,16 @@ function getTotalPrice() {
         totalPrice += product.productPrice * product.quantity;
     });
     return totalPrice;
+}
+
+function increase(productId) {
+    updateProductQuantity(productId, 1);
+    getTotalPrice();
+}
+
+function decrease(productId) {
+    updateProductQuantity(productId, -1);
+    getTotalPrice();
 }
 
 function coupon_notification(txt, addclass) {
