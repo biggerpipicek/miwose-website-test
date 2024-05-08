@@ -169,10 +169,10 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
         var popover = new bootstrap.Popover(coupon);
         popover.show();
 
-        setTimeout(()=>{
-            popover.remove();
+        setTimeout(function(){
+            popover.hide();
         },5000);
-        
+
     } else {
         // PASS
     }
