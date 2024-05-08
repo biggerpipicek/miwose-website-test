@@ -110,7 +110,7 @@ function displayCart() {
     });
 }
 
-window.onload = displayCart;
+window.onload = displayCart();
 
 function increase(productId) {
     updateProductQuantity(productId, 1);
@@ -210,12 +210,10 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
     event.preventDefault();
 });
 
-// Function to format the total price and display it
 function displayTotalPrice(totalPrice) {
     document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
 }
 
-// Update the displayed total price when the page loads
 window.onload = function() {
     const totalPrice = getTotalPrice();
     displayTotalPrice(totalPrice);
