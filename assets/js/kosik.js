@@ -165,9 +165,14 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
         if(existingPopover) {
             existingPopover.dispose();
         }
-        
+
         var popover = new bootstrap.Popover(coupon);
         popover.show();
+
+        setTimeout(()=>{
+            popover.remove();
+        },5000);
+        
     } else {
         // PASS
     }
