@@ -151,7 +151,7 @@ getTotalPrice();
 var coupon = document.getElementById("coupon");
 var load_coupon = document.getElementById("couponLoad");
 
-if(load_coupon.onclick == true && coupon.value == "") {
+if(load_coupon.onclick && coupon.value == "") {
     coupon.setAttribute("data-bs-container", "body");
     coupon.setAttribute("data-bs-toggle", "popover");
     coupon.setAttribute("data-bs-placement", "bottom");
@@ -162,4 +162,4 @@ if(load_coupon.onclick == true && coupon.value == "") {
 
 document.getElementById("coupon").addEventListener("click", function(event) {
     event.preventDefault();
-  });
+});
