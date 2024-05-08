@@ -210,7 +210,7 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
     const coupon_find = coupons.find(coupon => coupon.name === coupon_code);
 
     if(!coupon_find) {
-        var failed = "Kupón nebyl aplikován!";
+        var failed = "Kupón nebyl nalezen!";
         var addclass = "alert-danger";
         console.log("Invalid Coupon Code!");
         coupon_notification(failed, addclass);
@@ -224,6 +224,6 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
 
         totalPrice -= discountAmount;
 
-        document.querySelector(".finalPrice").textContent = `${totalPrice}`;
+        document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
     }
 });
