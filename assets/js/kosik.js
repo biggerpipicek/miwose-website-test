@@ -182,7 +182,7 @@ function coupon_notification(txt, addclass) {
 
     const notification = document.createElement("div");
     notification.className = `alert d-flex align-items-center fixed-bottom ${addclass}`;
-    notification.id = "couponLoad";
+    notification.id = "coupon_load";
     notification.setAttribute("role", "alert");
     notification.innerHTML = `<div>${txt}</div>`;
 
