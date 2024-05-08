@@ -198,3 +198,27 @@ footer {
     width: 350px;
     left: 2px;
 }
+
+#notification-container {
+    position: fixed;
+    bottom: 20px;
+    z-index: 9;
+    width: fit-content;
+    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.alert {
+    margin-bottom: 10px;
+}
+
+#addedToCart {
+    /*position: fixed;
+    bottom: 20px;*/
+    position: relative;
+    left: 50%;
+    width: fit-content;
+    transform: translateX(-50%);
+    z-index: 9;
+}
