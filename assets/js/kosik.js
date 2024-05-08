@@ -135,7 +135,6 @@ function getTotalPrice() {
     cart.forEach(product => {
         totalPrice += product.productPrice * product.quantity;
     });
-    return totalPrice;
 }
 
 function increase(productId) {
@@ -185,7 +184,7 @@ function applyCoupon() {
     const coupons = [
         { name: "COUPON_TEST", percentage: 5 },
         { name: "TEST", percentage: 100 },
-        { name: "MIWOSE", percentage: 50 },
+        { name: "MIWOSE", percentage: 50 }
     ];
     const coupon_find = coupons.find(coupon => coupon.name === coupon_code);
 
