@@ -147,3 +147,19 @@ function getTotalPrice() {
 }
 
 getTotalPrice();
+
+var coupon = document.getElementById("coupon");
+var load_coupon = document.getElementById("couponLoad");
+
+if(load_coupon.onclick == true && coupon.value == "") {
+    coupon.setAttribute("data-bs-container", "body");
+    coupon.setAttribute("data-bs-toggle", "popover");
+    coupon.setAttribute("data-bs-placement", "bottom");
+    coupon.setAttribute("data-bs-content", "Pole je prázdné!");
+} else {
+    // PASS
+}
+
+document.getElementById("coupon").addEventListener("click", function(event) {
+    event.preventDefault();
+  });
