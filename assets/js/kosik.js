@@ -161,11 +161,6 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
         
         event.preventDefault();
 
-        var existingPopover = bootstrap.Popover.getInstance(coupon);
-        if(existingPopover) {
-            existingPopover.dispose();
-        }
-
         var popover = new bootstrap.Popover(coupon);
         popover.show();
 
@@ -174,6 +169,9 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
         },5000);
 
     } else {
-        // PASS
+        var existingPopover = bootstrap.Popover.getInstance(coupon);
+        if(existingPopover) {
+            existingPopover.dispose();
+        }
     }
 });
