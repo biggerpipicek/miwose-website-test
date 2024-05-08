@@ -174,4 +174,6 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
             existingPopover.dispose();
         }
     }
+
+    event.preventDefault();
 });
