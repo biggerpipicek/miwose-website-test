@@ -177,3 +177,53 @@ document.getElementById("couponLoad").addEventListener("click", function(event) 
 
     event.preventDefault();
 });
+
+function coupon_notification(txt, addclass) {
+
+    const notification = document.createElement("div");
+    notification.className = `alert d-flex align-items-center fixed-bottom ${addclass}`;
+    notification.id = "couponLoad";
+    notification.setAttribute("role", "alert");
+    notification.innerHTML = `<div>${txt}</div>`;
+
+    const notifContainer = document.getElementById("notification-container");
+    notifContainer.appendChild(notification);
+
+    const notifications = notifContainer.querySelectorAll(".alert.alert-success");
+    if (notifications.length > 1) {
+        notifContainer.removeChild(notifications[0]);
+    }
+
+    setTimeout(()=>{
+        notification.remove();
+    },5000);
+    
+}
+
+document.getElementById("couponLoad").addEventListener("click", function(event) {
+    const coupon_code = document.getElementById("coupon").value;
+
+    const coupons = [
+        { name: "COUPON_TEST", percentage: 5},
+    ];
+
+    const coupon_find = coupons.find(coupon => coupon.name === coupon_code);
+
+    if(!coupon_find) {
+        var failed = "Kupón nebyl aplikován!";
+        var addclass = "alert-danger";
+        console.log("Invalid Coupon Code!");
+        coupon_notification(failed, addclass);
+    } else {
+        var success = "Kupón byl aplikován!";
+        addclass = "alert-success";
+        coupon_notification(success, addclass);
+        const discountPercentage = coupon_find.percentage / 100;
+        let totalPrice = getTotalPrice();
+        const discountAmount = totalPrice * discountPercentage;
+
+        totalPrice -= discountAmount;
+
+        document.querySelector(".finalPrice").textContent = `${totalPrice}`;
+    }
+});

@@ -32,7 +32,6 @@ section > .wrapper > form {
 .method-wrapper {
     position: relative;
     display: flex;
-    justify-content: center;
     align-content: stretch;
     flex-wrap: wrap;
     flex-direction: column;
