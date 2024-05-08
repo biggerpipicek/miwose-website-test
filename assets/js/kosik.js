@@ -148,18 +148,18 @@ function getTotalPrice() {
 
 getTotalPrice();
 
-var coupon = document.getElementById("coupon");
-var load_coupon = document.getElementById("couponLoad");
-
-if(load_coupon.onclick && coupon.value == "") {
-    coupon.setAttribute("data-bs-container", "body");
-    coupon.setAttribute("data-bs-toggle", "popover");
-    coupon.setAttribute("data-bs-placement", "bottom");
-    coupon.setAttribute("data-bs-content", "Pole je prázdné!");
-} else {
-    // PASS
-}
-
-document.getElementById("coupon").addEventListener("click", function(event) {
-    event.preventDefault();
+document.getElementById("couponLoad").addEventListener("click", function(event) {
+    var coupon = document.getElementById("coupon");
+    
+    if (coupon.value === "") {
+        console.log("Pole je prázdné!");
+        document.getElementById("couponLoad").setAttribute("data-bs-container", "body");
+        document.getElementById("couponLoad").setAttribute("data-bs-toggle", "popover");
+        document.getElementById("couponLoad").setAttribute("data-bs-placement", "bottom");
+        document.getElementById("couponLoad").setAttribute("data-bs-content", "Pole je prázdné!");
+        
+        event.preventDefault();
+    } else {
+        // PASS
+    }
 });
