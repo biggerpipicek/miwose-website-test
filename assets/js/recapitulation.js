@@ -1,5 +1,3 @@
-import { displayTotalPrice } from "kosik.js"
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const productsWrapper = document.querySelector(".products-cart");
 productsWrapper.innerHTML = "";
