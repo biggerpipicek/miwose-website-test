@@ -12,8 +12,8 @@ let coupon = JSON.parse(localStorage.getItem("COUPON_APPLIED")) || [];
 const couponsWrapper = document.querySelector(".coupon-cart");
 couponsWrapper.innerHTML = "";
 
-if (Object.keys(coupon).length !== 0) {
+coupon.forEach(coupon => {
     const couponHTML = `
-        <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage}%</li>`;
-    couponsWrapper.innerHTML = couponHTML;
-}
+        <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage} %</li>`;
+    couponsWrapper.innerHTML += couponHTML;
+});
