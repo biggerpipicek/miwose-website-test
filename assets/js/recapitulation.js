@@ -14,7 +14,7 @@ couponsWrapper.innerHTML = "";
 
 if (Object.keys(coupon).length !== 0) {
     const couponHTML = `
-        <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage}% <button class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button></li>`;
+        <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage}% <button id='removeCoupon' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button></li>`;
     
     couponsWrapper.insertAdjacentHTML("beforeend", couponHTML);
 }
@@ -49,3 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Element with class '.finalPrice' not found.");
     }
 });
+
+function removeCoupon() {
+    localStorage.removeItem("COUPON_APPLIED");
+    localStorage.setItem("COUPON_APPLIED_FLAG", false);
+    const totalPrice = getTotalPrice();
+    displayTotalPrice(totalPrice);
+}
+
+document.getElementById("removeCoupon").addEventListener("click", removeCoupon);
