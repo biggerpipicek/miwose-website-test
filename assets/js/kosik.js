@@ -56,7 +56,7 @@ function addProductToCart(product) {
     if (found) {
         found.quantity += 1;
 
-        if(found.price === "0") {
+        if(product.productId === "mesicni_odmena") {
             found.quantity = 1;
         }
     } else {
