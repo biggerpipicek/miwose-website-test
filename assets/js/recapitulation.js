@@ -14,7 +14,7 @@ couponsWrapper.innerHTML = "";
 
 if (Object.keys(coupon).length !== 0) {
     const couponHTML = `
-        <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage}%</li>`;
+        <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage}% <button class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button></li>`;
     
     couponsWrapper.insertAdjacentHTML("beforeend", couponHTML);
 }
