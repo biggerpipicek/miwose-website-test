@@ -209,16 +209,15 @@ function applyCoupon() {
 
         document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
         
-        // Store coupon details along with COUPON_APPLIED flag
         const couponDetails = {
             name: coupon_find.name,
             percentage: coupon_find.percentage
         };
         localStorage.setItem("COUPON_APPLIED", JSON.stringify(couponDetails));
-
-        localStorage.setItem("COUPON_APPLIED", true)
+        localStorage.setItem("COUPON_APPLIED_FLAG", true);
     }
 }
+
 
 document.getElementById("couponLoad").addEventListener("click", function(event) {
     applyCoupon();
@@ -234,9 +233,9 @@ window.onload = function() {
     const totalPrice = getTotalPrice();
     displayTotalPrice(totalPrice);
 
-    const appliedCoupon = localStorage.getItem('COUPON_APPLIED');
+    const appliedCoupon = localStorage.getItem('COUPON_APPLIED_FLAG');
     if (appliedCoupon) {
-        const couponDetails = JSON.parse(appliedCoupon);
+        const couponDetails = JSON.parse(localStorage.getItem('COUPON_APPLIED'));
         applyCouponToPrice(couponDetails);
     }
 };
