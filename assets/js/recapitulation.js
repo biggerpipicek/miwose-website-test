@@ -55,6 +55,7 @@ function removeCoupon() {
     localStorage.setItem("COUPON_APPLIED_FLAG", false);
     const totalPrice = getTotalPrice();
     displayTotalPrice(totalPrice);
+    window.location.reload();
 }
 
 document.getElementById("removeCoupon").addEventListener("click", removeCoupon);

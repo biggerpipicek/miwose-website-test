@@ -99,3 +99,8 @@ section > .wrapper > form {
 .hidden {
     display: none;
 }
+
+#removeCoupon {
+    position: relative;
+    left: 50px;
+}
