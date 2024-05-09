@@ -12,7 +12,7 @@ if (checkbox) {
             newInput.classList.add("input-group", "mb-3");
             newInput.innerHTML = `
             <span class="input-group-text" id="addon"><i class="fa-solid fa-pen-nib"></i></span>
-            <input type="text" required id="username" class="form-control" placeholder="Pro koho je dárek.." aria-label="Username" aria-describedby="addon">
+            <input type="text" required id="usernameGift" class="form-control" placeholder="Pro koho je dárek.." aria-label="Username" aria-describedby="addon">
             `;
             container.appendChild(newInput);
         } else {
@@ -322,7 +322,8 @@ const emailInput = document.getElementById("email");
 function saveUserData() {
     const userData = {
         username: usernameInput.value,
-        email: emailInput.value
+        email: emailInput.value,
+        giftedUsername: document.getElementById("usernameGift").value
     };
     localStorage.setItem("user_data", JSON.stringify(userData));
 }
