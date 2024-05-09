@@ -332,27 +332,18 @@ emailInput.addEventListener("input", saveUserData);
 
 // CHECKING IF THE "MESICNI_ODMENA" IS THE ONLY PRODUCT, IF YES SKIP THE CONFIRM.HTML PAGE
 document.addEventListener("DOMContentLoaded", function() {
-    const form_checkout = document.getElementById("formular");
-    const submit = document.getElementById("paymentButton");
+    const form = document.getElementById("formular");
 
-    function isMesicniOdmenaOnly() {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        return cart.lenght === 1 && cart[0].productId === "mesicni_odmena";
-    }
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    function updateSubmitButton() {
-        if (isMesicniOdmenaOnly()) {
-            submitButton.addEventListener("click", function(event) {
-                event.preventDefault();
-                checkoutForm.submit();
-            });
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const onlyMesicniOdmena = cart.length === 1 && cart[0].productId === "mesicni_odmena";
+
+        if (onlyMesicniOdmena) {
+            window.location.href = "uspesna_platba.html";
         } else {
-            submitButton.removeEventListener("click", function(event) {
-                event.preventDefault();
-                checkoutForm.submit();
-            });
+            this.submit();
         }
-    }
-
-    updateSubmitButton();
+    });
 });
