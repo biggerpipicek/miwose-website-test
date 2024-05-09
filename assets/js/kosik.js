@@ -311,3 +311,5 @@ document.getElementById("paymentButton").addEventListener("click", function(even
         payment_notification();
     }
 });
+
+displayTotalPrice();
