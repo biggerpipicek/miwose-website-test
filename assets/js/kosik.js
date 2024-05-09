@@ -312,4 +312,17 @@ document.getElementById("paymentButton").addEventListener("click", function(even
     }
 });
 
-displayTotalPrice();
+// SAVING USER DATA TO LOCAL STORAGE
+const usernameInput = document.getElementById("username");
+const emailInput = document.getElementById("email");
+
+function saveUserData() {
+    const userData = {
+        username: usernameInput.value,
+        email: emailInput.value
+    };
+    localStorage.setItem("user_data", JSON.stringify(userData));
+}
+
+usernameInput.addEventListener("input", saveUserData);
+emailInput.addEventListener("input", saveUserData);

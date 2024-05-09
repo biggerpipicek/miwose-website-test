@@ -1,5 +1,3 @@
-import { displayTotalPrice } from "kosik.js"
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const productsWrapper = document.querySelector(".products-cart");
 productsWrapper.innerHTML = "";
@@ -21,4 +19,8 @@ if (Object.keys(coupon).length !== 0) {
     couponsWrapper.insertAdjacentHTML("beforeend", couponHTML);
 }
 
-displayTotalPrice();
+let user_data = JSON.parse(localStorage.getItem("user_data")) || [];
+let name_wrapper = document.getElementById("username");
+let email_wrapper = document.getElementById("email");
+name_wrapper.textContent = user_data.username || "Prázdné pole!"
+email_wrapper.textContent = user_data.email || "Prázdné pole!";
