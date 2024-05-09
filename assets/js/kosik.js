@@ -216,7 +216,7 @@ function applyCoupon() {
         };
         localStorage.setItem("COUPON_APPLIED", JSON.stringify(couponDetails));
 
-        localStorage.setItem("COUPON_APPLIED", COUPON_APPLIED=true)
+        localStorage.setItem("COUPON_APPLIED", true)
     }
 }
 
