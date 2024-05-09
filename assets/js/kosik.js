@@ -176,7 +176,7 @@ function coupon_notification(txt, addclass) {
 let COUPON_APPLIED = false;
 
 function applyCoupon() {
-    if (localStorage.getItem('COUPON_APPLIED')) {
+    if (localStorage.getItem("COUPON_APPLIED")) {
         var alreadyApplied = "Kupon již byl aplikován!";
         var addclass = "alert-info";
         console.log("Coupon already applied!");
@@ -208,7 +208,15 @@ function applyCoupon() {
         totalPrice -= discountAmount;
 
         document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
-        localStorage.setItem('COUPON_APPLIED', true);
+        
+        // Store coupon details along with COUPON_APPLIED flag
+        const couponDetails = {
+            name: coupon_find.name,
+            percentage: coupon_find.percentage
+        };
+        localStorage.setItem("COUPON_APPLIED", JSON.stringify(couponDetails));
+
+        localStorage.setItem("COUPON_APPLIED", COUPON_APPLIED=true)
     }
 }
 
@@ -225,7 +233,23 @@ function displayTotalPrice(totalPrice) {
 window.onload = function() {
     const totalPrice = getTotalPrice();
     displayTotalPrice(totalPrice);
+
+    const appliedCoupon = localStorage.getItem('COUPON_APPLIED');
+    if (appliedCoupon) {
+        const couponDetails = JSON.parse(appliedCoupon);
+        applyCouponToPrice(couponDetails);
+    }
 };
+
+function applyCouponToPrice(couponDetails) {
+    const discountPercentage = couponDetails.percentage / 100;
+    let totalPrice = getTotalPrice();
+    const discountAmount = totalPrice * discountPercentage;
+
+    totalPrice -= discountAmount;
+
+    document.querySelector(".finalPrice").textContent = `${totalPrice.toFixed(2)}`;
+}
 
 document.getElementById("couponLoad").addEventListener("click", function(event) {
     var coupon = document.getElementById("coupon");
