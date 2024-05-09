@@ -1,3 +1,5 @@
+import { displayTotalPrice } from "kosik.js"
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const productsWrapper = document.querySelector(".products-cart");
 productsWrapper.innerHTML = "";
@@ -17,3 +19,5 @@ if (Object.keys(coupon).length !== 0) {
         <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage} %</li>`;
     couponsWrapper.innerHTML = couponHTML;
 }
+
+displayTotalPrice();
