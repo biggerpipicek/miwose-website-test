@@ -1,3 +1,5 @@
+import { getTotalPrice } from "kosik.js"
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const productsWrapper = document.querySelector(".products-cart");
 productsWrapper.innerHTML = "";
@@ -17,3 +19,5 @@ coupon.forEach(coupon => {
         <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage} %</li>`;
     couponsWrapper.innerHTML += couponHTML;
 });
+
+getTotalPrice();
