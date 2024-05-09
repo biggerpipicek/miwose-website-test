@@ -1,5 +1,5 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-const productsWrapper = document.querySelector(".lg");
+const productsWrapper = document.querySelector(".products-cart");
 productsWrapper.innerHTML = "";
 
 cart.forEach(product => {
@@ -9,7 +9,7 @@ cart.forEach(product => {
 });
 
 let coupon = JSON.parse(localStorage.getItem("COUPON_APPLIED")) || [];
-const productsWrapper = document.querySelector(".lg");
+const productsWrapper = document.querySelector(".coupon-cart");
 productsWrapper.innerHTML = "";
 
 cart.forEach(product => {
