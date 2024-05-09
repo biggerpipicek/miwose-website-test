@@ -55,10 +55,6 @@ function addProductToCart(product) {
     let found = cart.find(p => p.productId === product.productId);
     if (found) {
         found.quantity += 1;
-
-        if(product.productId === "mesicni_odmena") {
-            found.quantity = 1;
-        }
     } else {
         cart.push(product);
     }
@@ -140,6 +136,9 @@ function getTotalPrice() {
 }
 
 function increase(productId) {
+    if(productId === "mesicni_odmena") {
+        return;
+    }
     updateProductQuantity(productId, 1);
     const totalPrice = getTotalPrice();
     displayTotalPrice(totalPrice);
