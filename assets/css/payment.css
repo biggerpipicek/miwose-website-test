@@ -54,7 +54,7 @@ section > .wrapper > form {
     margin-bottom: auto;
 }
 
-.card-wrapper, .recap-wrapper {
+.card-wrapper, .recap-wrapper, .coupon-wrapper {
     position: relative;
     left: 5%;
     width: 90%;
