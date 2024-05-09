@@ -21,7 +21,7 @@ if (Object.keys(coupon).length !== 0) {
 
 let user_data = JSON.parse(localStorage.getItem("user_data")) || [];
 let name_wrapper = document.getElementById("username");
-let gifted_wrapper = document.getElementById("usernameGIfted");
+let gifted_wrapper = document.getElementById("usernameGifted");
 let email_wrapper = document.getElementById("email");
 name_wrapper.textContent = user_data.username || "Prázdné pole!"
 gifted_wrapper.textContent = user_data.giftedUsername || "Prázdné pole!"
