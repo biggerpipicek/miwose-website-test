@@ -9,11 +9,11 @@ cart.forEach(product => {
 });
 
 let coupon = JSON.parse(localStorage.getItem("COUPON_APPLIED")) || [];
-const productsWrapper = document.querySelector(".coupon-cart");
-productsWrapper.innerHTML = "";
+const couponsWrapper = document.querySelector(".coupon-cart");
+couponsWrapper.innerHTML = "";
 
 cart.forEach(product => {
     const couponHTML = `
         <li class="list-group-item"><b>${coupon.name}</b> - ${coupon.percentage} %</li>`;
-    productsWrapper.innerHTML += couponHTML;
+        couponsWrapper.innerHTML += couponHTML;
 });
