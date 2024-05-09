@@ -24,3 +24,28 @@ let name_wrapper = document.getElementById("username");
 let email_wrapper = document.getElementById("email");
 name_wrapper.textContent = user_data.username || "Prázdné pole!"
 email_wrapper.textContent = user_data.email || "Prázdné pole!";
+
+
+// WE ARE COUNTING THE PRICE AGAIN, BECAUSE I CAN'T SEEM TO IMPORT THE FINALPRICE IN THE CONFIRM.HTML EVEN THOUGHT IT WORKS IN THE CART.HTML (IDK)
+document.addEventListener("DOMContentLoaded", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    // Calculate total price
+    let totalPrice = 0;
+    cart.forEach(product => {
+        totalPrice += product.productPrice * product.quantity;
+    });
+
+    let coupon = JSON.parse(localStorage.getItem("COUPON_APPLIED")) || [];
+    if (Object.keys(coupon).length !== 0) {
+        const discountPercentage = coupon.percentage / 100;
+        totalPrice -= totalPrice * discountPercentage;
+    }
+
+    const finalPriceElement = document.querySelector(".finalPrice");
+    if (finalPriceElement) {
+        finalPriceElement.textContent = totalPrice.toFixed(2);
+    } else {
+        console.error("Element with class '.finalPrice' not found.");
+    }
+});
