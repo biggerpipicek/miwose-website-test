@@ -55,6 +55,10 @@ function addProductToCart(product) {
     let found = cart.find(p => p.productId === product.productId);
     if (found) {
         found.quantity += 1;
+
+        if(product.productId === "mesicni_odmena") {
+            found.quantity = 1;
+        }
     } else {
         cart.push(product);
     }
@@ -325,3 +329,30 @@ function saveUserData() {
 
 usernameInput.addEventListener("input", saveUserData);
 emailInput.addEventListener("input", saveUserData);
+
+// CHECKING IF THE "MESICNI_ODMENA" IS THE ONLY PRODUCT, IF YES SKIP THE CONFIRM.HTML PAGE
+document.addEventListener("DOMContentLoaded", function() {
+    const form_checkout = document.getElementById("formular");
+    const submit = document.getElementById("paymentButton");
+
+    function isMesicniOdmenaOnly() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        return cart.lenght === 1 && cart[0].productId === "mesicni_odmena";
+    }
+
+    function updateSubmitButton() {
+        if (isMesicniOdmenaOnly()) {
+            submitButton.addEventListener("click", function(event) {
+                event.preventDefault();
+                checkoutForm.submit();
+            });
+        } else {
+            submitButton.removeEventListener("click", function(event) {
+                event.preventDefault();
+                checkoutForm.submit();
+            });
+        }
+    }
+
+    updateSubmitButton();
+});
