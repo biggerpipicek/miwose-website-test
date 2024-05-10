@@ -23,9 +23,9 @@ let user_data = JSON.parse(localStorage.getItem("user_data")) || [];
 let name_wrapper = document.getElementById("username");
 let gifted_wrapper = document.getElementById("usernameGifted");
 let email_wrapper = document.getElementById("email");
-name_wrapper.textContent = user_data.username || "Prázdné pole!";
-gifted_wrapper.textContent = user_data.giftedUsername || "Prázdné pole!";
-email_wrapper.textContent = user_data.email || "Prázdné pole!";
+name_wrapper.textContent = user_data.username;
+gifted_wrapper.textContent = user_data.giftedUsername;
+email_wrapper.textContent = user_data.email;
 
 name_wrapper.insertAdjacentHTML("beforeend", `<button id='removeUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`);
 gifted_wrapper.insertAdjacentHTML("beforeend", `<button id='removeGiftedUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`);
@@ -40,21 +40,18 @@ document.addEventListener("DOMContentLoaded", function() {
         const userData = JSON.parse(localStorage.getItem("user_data")) || {};
         delete userData.username;
         localStorage.setItem("user_data", JSON.stringify(userData));
-        location.reload();
     });
 
     removeGiftedUsername.addEventListener("click", function() {
         const userData = JSON.parse(localStorage.getItem("user_data")) || {};
         delete userData.friendUsername;
         localStorage.setItem("user_data", JSON.stringify(userData));
-        location.reload();
     });
 
     removeEmail.addEventListener("click", function() {
         const userData = JSON.parse(localStorage.getItem("user_data")) || {};
         delete userData.email;
         localStorage.setItem("user_data", JSON.stringify(userData));
-        location.reload();
     });
 });
 
