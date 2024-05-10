@@ -22,9 +22,17 @@ if (Object.keys(coupon).length !== 0) {
 function updateUserDataDisplay(userData) {
     let name_wrapper = document.getElementById("username");
     let gifted_wrapper = document.getElementById("usernameGifted");
+    let giftedMainWrapper = document.getElementById("giftedUsernameWrapper");
     let email_wrapper = document.getElementById("email");
     name_wrapper.textContent = userData.username || "";
-    gifted_wrapper.textContent = userData.giftedUsername || "";
+    
+    if(userData.giftedUsername) {
+        gifted_wrapper.textContent = userData.giftedUsername;
+        giftedMainWrapper.style.display = "block";
+    } else {
+        giftedMainWrapper.style.display = "none";
+    }
+
     email_wrapper.textContent = userData.email || "";
 }
 
