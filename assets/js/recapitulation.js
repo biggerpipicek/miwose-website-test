@@ -34,29 +34,31 @@ usernameWrapper.textContent = `<button id='removeUsername' class="btn btn-outlin
 giftedUsernameWrapper.textContent = `<button id='removeGiftedUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`;
 emailWrapper.textContent = `<button id='removeEmail' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`;
 
-const removeUsername = document.getElementById("removeUsername");
-const removeGiftedUsername = document.getElementById("removeGiftedUsername");
-const removeEmail = document.getElementById("removeEmail");
+document.addEventListener("DOMContentLoaded", function() {
+    const removeUsername = document.getElementById("removeUsername");
+    const removeGiftedUsername = document.getElementById("removeGiftedUsername");
+    const removeEmail = document.getElementById("removeEmail");
 
-removeUsername.addEventListener("click", function() {
-    const userData = JSON.parse(localStorage.getItem("user_data")) || {};
-    delete userData.username;
-    localStorage.setItem("user_data", JSON.stringify(userData));
-    location.reload();
-});
+    removeUsername.addEventListener("click", function() {
+        const userData = JSON.parse(localStorage.getItem("user_data")) || {};
+        delete userData.username;
+        localStorage.setItem("user_data", JSON.stringify(userData));
+        location.reload();
+    });
 
-removeGiftedUsername.addEventListener("click", function() {
-    const userData = JSON.parse(localStorage.getItem("user_data")) || {};
-    delete userData.friendUsername;
-    localStorage.setItem("user_data", JSON.stringify(userData));
-    location.reload();
-});
+    removeGiftedUsername.addEventListener("click", function() {
+        const userData = JSON.parse(localStorage.getItem("user_data")) || {};
+        delete userData.friendUsername;
+        localStorage.setItem("user_data", JSON.stringify(userData));
+        location.reload();
+    });
 
-removeEmail.addEventListener("click", function() {
-    const userData = JSON.parse(localStorage.getItem("user_data")) || {};
-    delete userData.email;
-    localStorage.setItem("user_data", JSON.stringify(userData));
-    location.reload();
+    removeEmail.addEventListener("click", function() {
+        const userData = JSON.parse(localStorage.getItem("user_data")) || {};
+        delete userData.email;
+        localStorage.setItem("user_data", JSON.stringify(userData));
+        location.reload();
+    });
 });
 
 // WE ARE COUNTING THE PRICE AGAIN, BECAUSE I CAN'T SEEM TO IMPORT THE FINALPRICE IN THE CONFIRM.HTML EVEN THOUGHT IT WORKS IN THE CART.HTML (IDK)
