@@ -104,3 +104,7 @@ section > .wrapper > form {
     position: relative;
     left: 50px;
 }
+
+.payment-type-wrapper p {
+    margin-bottom: 0.5rem;
+}
