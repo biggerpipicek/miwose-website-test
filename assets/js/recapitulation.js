@@ -19,45 +19,19 @@ if (Object.keys(coupon).length !== 0) {
     couponsWrapper.insertAdjacentHTML("beforeend", couponHTML);
 }
 
-let user_data = JSON.parse(localStorage.getItem("user_data")) || {};
-console.log(user_data);
-let name_wrapper = document.getElementById("username");
-let gifted_wrapper = document.getElementById("usernameGifted");
-let email_wrapper = document.getElementById("email");
-name_wrapper.textContent = user_data.username || "";
-gifted_wrapper.textContent = user_data.giftedUsername || "";
-email_wrapper.textContent = user_data.email || "";
-
-name_wrapper.insertAdjacentHTML("beforeend", `<button id='removeUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`);
-gifted_wrapper.insertAdjacentHTML("beforeend", `<button id='removeGiftedUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`);
-email_wrapper.insertAdjacentHTML("beforeend", `<button id='removeEmail' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`);
-
-function removeUsername() {
-    let userData = JSON.parse(localStorage.getItem("user_data")) || {};
-    delete userData.username;
-    localStorage.setItem("user_data", JSON.stringify(userData));
-    window.location.reload();
+function updateUserDataDisplay(userData) {
+    let name_wrapper = document.getElementById("username");
+    let gifted_wrapper = document.getElementById("usernameGifted");
+    let email_wrapper = document.getElementById("email");
+    name_wrapper.textContent = userData.username || "";
+    gifted_wrapper.textContent = userData.giftedUsername || "";
+    email_wrapper.textContent = userData.email || "";
 }
 
-function removeGiftedUsername() {
-    let userData = JSON.parse(localStorage.getItem("user_data")) || {};
-    delete userData.giftedUsername;
-    localStorage.setItem("user_data", JSON.stringify(userData));
-    window.location.reload();
-}
-
-function removeEmail() {
-    let userData = JSON.parse(localStorage.getItem("user_data")) || {};
-    delete userData.email;
-    localStorage.setItem("user_data", JSON.stringify(userData));
-    window.location.reload();
-}
-
-document.getElementById("removeUsername").addEventListener("click", removeUsername);
-
-document.getElementById("removeGiftedUsername").addEventListener("click", removeGiftedUsername);
-
-document.getElementById("removeEmail").addEventListener("click", removeEmail);
+document.addEventListener("DOMContentLoaded", () => {
+    let user_data = JSON.parse(localStorage.getItem("user_data")) || {};
+    updateUserDataDisplay(user_data);
+});
 
 // WE ARE COUNTING THE PRICE AGAIN, BECAUSE I CAN'T SEEM TO IMPORT THE FINALPRICE IN THE CONFIRM.HTML EVEN THOUGHT IT WORKS IN THE CART.HTML (IDK)
 document.addEventListener("DOMContentLoaded", () => {

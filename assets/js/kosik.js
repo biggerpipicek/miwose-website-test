@@ -328,12 +328,18 @@ function saveUserData() {
         userData.username = usernameInput.value;
     }
 
-    if (document.getElementById("usernameGift")) {
-        userData.giftedUsername = document.getElementById("usernameGift").value;
+    const usernameGiftedInput = document.getElementById("usernameGift");
+    if (usernameGiftedInput) {
+        userData.giftedUsername = usernameGiftedInput.value;
     }
 
     localStorage.setItem("user_data", JSON.stringify(userData));
 }
+
+const inputElements = [usernameInput, emailInput];
+inputElements.forEach(element => {
+    element.addEventListener("input", saveUserData);
+});
 
 usernameInput.addEventListener("input", saveUserData);
 emailInput.addEventListener("input", saveUserData);
