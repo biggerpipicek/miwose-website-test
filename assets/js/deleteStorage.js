@@ -1,4 +1,4 @@
-if (window.location.pathname === "/uspesna_platba.html") {
+if (window.location.pathname === "uspesna_platba.html") {
     // Remove cart items
     localStorage.removeItem("cart");
 
