@@ -23,11 +23,35 @@ let user_data = JSON.parse(localStorage.getItem("user_data")) || [];
 let name_wrapper = document.getElementById("username");
 let gifted_wrapper = document.getElementById("usernameGifted");
 let email_wrapper = document.getElementById("email");
-name_wrapper.textContent = user_data.username || "Prázdné pole!"
-gifted_wrapper.textContent = user_data.giftedUsername || "Prázdné pole!"
-email_wrapper.textContent = user_data.email || "Prázdné pole!";
+name_wrapper.textContent = user_data.username || "Prázdné pole!" + `<button id='removeUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`;
+gifted_wrapper.textContent = user_data.giftedUsername || "Prázdné pole!" + `<button id='removeGiftedUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`;
+email_wrapper.textContent = user_data.email || "Prázdné pole!" + `<button id='removeEmail' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`;
 
 
+const removeUsername = document.getElementById("removeUsername");
+const removeGiftedUsername = document.getElementById("removeGiftedUsername")
+const removeEmail = document.getElementById("removeEmail");
+
+name_wrapper.addEventListener("click", function() {
+    const userData = JSON.parse(localStorage.getItem("user_data")) || {};
+    delete userData.username;
+    localStorage.setItem("user_data", JSON.stringify(userData));
+    location.reload();
+});
+
+gifted_wrapper.addEventListener("click", function() {
+    const userData = JSON.parse(localStorage.getItem("user_data")) || {};
+    delete userData.friendUsername;
+    localStorage.setItem("user_data", JSON.stringify(userData));
+    location.reload();
+});
+
+email_wrapper.addEventListener("click", function() {
+    const userData = JSON.parse(localStorage.getItem("user_data")) || {};
+    delete userData.email;
+    localStorage.setItem("user_data", JSON.stringify(userData));
+    location.reload();
+});
 
 // WE ARE COUNTING THE PRICE AGAIN, BECAUSE I CAN'T SEEM TO IMPORT THE FINALPRICE IN THE CONFIRM.HTML EVEN THOUGHT IT WORKS IN THE CART.HTML (IDK)
 document.addEventListener("DOMContentLoaded", () => {

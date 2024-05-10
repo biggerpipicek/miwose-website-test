@@ -10,7 +10,7 @@
         margin-bottom: 25px;
     }
 
-    #removeCoupon {
+    #removeCoupon, #removeUsername, #removeGiftedUsername, #removeEmail {
         left: 20px;
     }
 }

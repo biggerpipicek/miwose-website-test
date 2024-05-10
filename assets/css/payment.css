@@ -100,7 +100,7 @@ section > .wrapper > form {
     display: none;
 }
 
-#removeCoupon {
+#removeCoupon, #removeUsername, #removeGiftedUsername, #removeEmail {
     position: relative;
     left: 50px;
 }
