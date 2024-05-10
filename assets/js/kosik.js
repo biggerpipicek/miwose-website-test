@@ -321,11 +321,17 @@ const emailInput = document.getElementById("email");
 
 function saveUserData() {
     const userData = {
-        username: usernameInput.value,
         email: emailInput.value,
-        giftedUsername: document.getElementById("usernameGift").value
     };
-    console.log(userData);
+
+    if (usernameInput) {
+        userData.username = usernameInput.value;
+    }
+
+    if (document.getElementById("usernameGift")) {
+        userData.giftedUsername = document.getElementById("usernameGift").value;
+    }
+
     localStorage.setItem("user_data", JSON.stringify(userData));
 }
 
