@@ -52,11 +52,11 @@ function removeEmail() {
     window.location.reload();
 }
 
-document.getElementById("removeUsername").addEventListener("click", removeCoupon);
+document.getElementById("removeUsername").addEventListener("click", removeUsername);
 
-document.getElementById("removeGiftedUsername").addEventListener("click", removeCoupon);
+document.getElementById("removeGiftedUsername").addEventListener("click", removeGiftedUsername);
 
-document.getElementById("removeEmail").addEventListener("click", removeCoupon);
+document.getElementById("removeEmail").addEventListener("click", removeEmail);
 
 // WE ARE COUNTING THE PRICE AGAIN, BECAUSE I CAN'T SEEM TO IMPORT THE FINALPRICE IN THE CONFIRM.HTML EVEN THOUGHT IT WORKS IN THE CART.HTML (IDK)
 document.addEventListener("DOMContentLoaded", () => {
