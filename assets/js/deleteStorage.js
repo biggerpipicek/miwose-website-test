@@ -1,13 +1,12 @@
-if (window.location.pathname === "uspesna_platba.html") {
-    // Remove cart items
-    localStorage.removeItem("cart");
-
-    // Remove user data
-    localStorage.removeItem("user_data");
-
-    // Remove applied coupon
-    localStorage.removeItem("COUPON_APPLIED");
-
-    // Reset coupon flag
-    localStorage.setItem("COUPON_APPLIED_FLAG", false);
-}
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname === "uspesna_platba.html") {
+        // Remove localStorage items
+        localStorage.removeItem("cart");
+        localStorage.removeItem("user_data");
+        
+        if (localStorage.getItem("COUPON_APPLIED")) {
+            localStorage.removeItem("COUPON_APPLIED");
+            localStorage.setItem("COUPON_APPLIED_FLAG", "false");
+        }
+    }
+});
