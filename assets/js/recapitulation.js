@@ -19,13 +19,13 @@ if (Object.keys(coupon).length !== 0) {
     couponsWrapper.insertAdjacentHTML("beforeend", couponHTML);
 }
 
-let user_data = JSON.parse(localStorage.getItem("user_data")) || [];
+let user_data = JSON.parse(localStorage.getItem("user_data")) || {};
 let name_wrapper = document.getElementById("username");
 let gifted_wrapper = document.getElementById("usernameGifted");
 let email_wrapper = document.getElementById("email");
-name_wrapper.textContent = user_data.username;
-gifted_wrapper.textContent = user_data.giftedUsername;
-email_wrapper.textContent = user_data.email;
+name_wrapper.textContent = user_data.username || "";
+gifted_wrapper.textContent = user_data.giftedUsername || "";
+email_wrapper.textContent = user_data.email || "";
 
 name_wrapper.insertAdjacentHTML("beforeend", `<button id='removeUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`);
 gifted_wrapper.insertAdjacentHTML("beforeend", `<button id='removeGiftedUsername' class="btn btn-outline-danger"><i class="fa-solid fa-minus"></i></button>`);
