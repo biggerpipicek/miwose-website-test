@@ -77,15 +77,20 @@ document.getElementById("removeCoupon").addEventListener("click", removeCoupon);
 
 document.getElementById("pay").addEventListener("click", function() {
     console.log("Pay button clicked");
+
+    // Remove cart items
     localStorage.removeItem("cart");
-    console.log("Cart removed:", localStorage.getItem("cart"));
+    console.log("Cart removed");
 
+    // Remove user data
     localStorage.removeItem("user_data");
-    console.log("User data removed:", localStorage.getItem("user_data"));
+    console.log("User data removed");
 
+    // Remove applied coupon
     localStorage.removeItem("COUPON_APPLIED");
-    console.log("Coupon applied removed:", localStorage.getItem("COUPON_APPLIED"));
+    console.log("Coupon applied removed");
     
-    localStorage.setItem("COUPON_APPLIED_FLAG", false);
-    console.log("Coupon applied flag reset to:", localStorage.getItem("COUPON_APPLIED_FLAG"));
+    // Reset coupon flag
+    localStorage.setItem("COUPON_APPLIED_FLAG", "false");
+    console.log("Coupon applied flag reset");
 });
