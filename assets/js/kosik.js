@@ -325,6 +325,7 @@ function saveUserData() {
         email: emailInput.value,
         giftedUsername: document.getElementById("usernameGift").value
     };
+    console.log(userData);
     localStorage.setItem("user_data", JSON.stringify(userData));
 }
 

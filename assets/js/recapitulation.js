@@ -20,6 +20,7 @@ if (Object.keys(coupon).length !== 0) {
 }
 
 let user_data = JSON.parse(localStorage.getItem("user_data")) || {};
+console.log(user_data);
 let name_wrapper = document.getElementById("username");
 let gifted_wrapper = document.getElementById("usernameGifted");
 let email_wrapper = document.getElementById("email");
