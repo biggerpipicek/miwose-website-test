@@ -29,24 +29,24 @@ email_wrapper.textContent = user_data.email || "Prázdné pole!" + `<button id='
 
 
 const removeUsername = document.getElementById("removeUsername");
-const removeGiftedUsername = document.getElementById("removeGiftedUsername")
+const removeGiftedUsername = document.getElementById("removeGiftedUsername");
 const removeEmail = document.getElementById("removeEmail");
 
-name_wrapper.addEventListener("click", function() {
+removeUsername.addEventListener("click", function() {
     const userData = JSON.parse(localStorage.getItem("user_data")) || {};
     delete userData.username;
     localStorage.setItem("user_data", JSON.stringify(userData));
     location.reload();
 });
 
-gifted_wrapper.addEventListener("click", function() {
+removeGiftedUsername.addEventListener("click", function() {
     const userData = JSON.parse(localStorage.getItem("user_data")) || {};
     delete userData.friendUsername;
     localStorage.setItem("user_data", JSON.stringify(userData));
     location.reload();
 });
 
-email_wrapper.addEventListener("click", function() {
+removeEmail.addEventListener("click", function() {
     const userData = JSON.parse(localStorage.getItem("user_data")) || {};
     delete userData.email;
     localStorage.setItem("user_data", JSON.stringify(userData));
